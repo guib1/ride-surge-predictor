@@ -26,10 +26,10 @@ def extract_rides_from_html(html_content):
             block_text = parent.get_text(separator=' | ').lower()
             
             ride_id = "unknown"
-            if 'uberx' in block_text or 'uber x' in block_text: ride_id = "uber_x"
+            if 'bag' in block_text: ride_id = "bag"
+            elif 'uberx' in block_text or 'uber x' in block_text: ride_id = "uber_x"
             elif 'moto' in block_text: ride_id = "uber_moto"
             elif 'comfort' in block_text: ride_id = "comfort"
-            elif 'bag' in block_text: ride_id = "bag"
             elif 'black' in block_text: ride_id = "black"
             
             if ride_id == "unknown":
